@@ -5,7 +5,7 @@ namespace DatingApp.API.Dtos
     public class UserForRegisterDto
     {
         [Required]
-        [StringLength(255)]
+        [StringLength(255, ErrorMessage = "Username cannot be blank")]
         public string Username { get; set; }
 
         [Required]

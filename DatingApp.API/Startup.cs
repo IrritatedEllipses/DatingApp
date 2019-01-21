@@ -80,6 +80,7 @@ namespace DatingApp.API
             services.AddDbContext<DataContext>(X => X.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors();
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+            Mapper.Reset();
             services.AddAutoMapper();
             services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
